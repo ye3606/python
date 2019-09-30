@@ -25,18 +25,17 @@ workbook=xlrd.open_workbook('/mnt/hgfs/l/2.xlsx')
 # 创建一个sheet对象，一个sheet对象对应Excel文件中的一张表格。 
 sheet = book.add_sheet('12', cell_overwrite_ok=True)
 #在新的表格创建新的索引
-str2="/" 
-for i in range(1, 50):
-  str1=worksheet.cell_value(i,2)
-  str3=worksheet.cell_value(i,0)
-  str4=worksheet.cell_value(i,1)
-  str5=worksheet.cell_value(i,2)
-  str6=worksheet.cell_value(i,3)
-#  print(cell_value)
-  sheet.write(i, 4, str1[:str1.index(str2)])
-  sheet.write(i, 0, str3)
-  sheet.write(i, 1, str4)
-  sheet.write(i, 2, str5)
-  sheet.write(i, 3, str6)
-  #  print str1[:str1.index(str2)] 
-  book.save('12.xls')
+str0="/"
+nrows = worksheet.nrows 
+for i in range(1,nrows): 
+  str1=worksheet.cell_value(i,0)
+  str2=worksheet.cell_value(i,1)
+  str3=worksheet.cell_value(i,2)
+  str4=worksheet.cell_value(i,3)
+  #  print(cell_value) sheet.write(i,0, str1)
+  sheet.write(i,1, str2)
+  sheet.write(i,2, str3)
+  sheet.write(i,3, str4)
+  sheet.write(i,4, str3[:str3.index(str0)])
+  #  print str1[:str1.index(str2)]
+book.save('12.xls') 
