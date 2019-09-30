@@ -1,6 +1,31 @@
-#!/usr/bin/env python # -*- coding: UTF-8 -*- import xlrd import xlwt #import xlutils.copy workbook=xlrd.open_workbook('/mnt/hgfs/l/2.xlsx') #names=workbook.sheet_names() #print(names) #输出所有的表名，以列表的形式 #sheet0_name=workbook.sheet_names()[1] #print(sheet0_name) worksheet=workbook.sheet_by_index(0) #print(worksheet) #name=worksheet.name  #获取表的姓名 #print(name) #nrows=worksheet.nrows  #获取该表总行数 #print(nrows) #ncols=worksheet.ncols  #获取该表总列数 #print(ncols) #col_data=worksheet.col_values(0)  #获取第一列的内容 #print(col_data)
-#通过坐标读取表格中的数据 #def str_pick(i): #   print(cell_value) #   str1=cell_value #   str2="/" #   print str1[:str1.index(str2)] #获取 "/"之前的字符(不包含/) #   return;
-#创建一个Workbook对象，相当于创建了一个Excel文件 book=xlwt.Workbook(encoding="utf-8",style_compression=0) # 创建一个sheet对象，一个sheet对象对应Excel文件中的一张表格。 sheet = book.add_sheet('12', cell_overwrite_ok=True) #在新的表格创建新的索引 str2="/" for i in range(1, 50): str1=worksheet.cell_value(i,2)
+#!/usr/bin/env python
+# -*- coding: UTF-8 -*- 
+import xlrd
+import xlwt
+#import xlutils.copy
+workbook=xlrd.open_workbook('/mnt/hgfs/l/2.xlsx')
+#names=workbook.sheet_names()
+#print(names) #输出所有的表名，以列表的形式
+#sheet0_name=workbook.sheet_names()[1]
+#print(sheet0_name) worksheet=workbook.sheet_by_index(0)
+#print(worksheet) #name=worksheet.name  
+#获取表的姓名
+#print(name) #nrows=worksheet.nrows
+#获取该表总行数
+#print(nrows) #ncols=worksheet.ncols
+#获取该表总列数 #print(ncols) #col_data=worksheet.col_values(0)
+#获取第一列的内容 #print(col_data)
+#通过坐标读取表格中的数据
+#def str_pick(i): #   print(cell_value)
+#   str1=cell_value
+#   str2="/" #   print str1[:str1.index(str2)]
+#获取 "/"之前的字符(不包含/)
+#   return;
+#创建一个Workbook对象，相当于创建了一个Excel文件 book=xlwt.Workbook(encoding="utf-8",style_compression=0)
+# 创建一个sheet对象，一个sheet对象对应Excel文件中的一张表格。 sheet = book.add_sheet('12', cell_overwrite_ok=True)
+#在新的表格创建新的索引
+str2="/" 
+for i in range(1, 50): str1=worksheet.cell_value(i,2)
   str3=worksheet.cell_value(i,0)
   str4=worksheet.cell_value(i,1)
   str5=worksheet.cell_value(i,2)
